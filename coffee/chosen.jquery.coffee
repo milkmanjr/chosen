@@ -194,6 +194,7 @@ class Chosen extends AbstractChosen
       if @disable_search or @form_field.options.length <= @disable_search_threshold
         @search_field[0].readOnly = true
         @search_field[0].disabled = true
+        $(this.search_field[0]).css('display', 'none').attr('disabled', 'disabled');
         @container.addClass "chosen-container-single-nosearch"
       else
         @search_field[0].readOnly = false
