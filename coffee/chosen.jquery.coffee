@@ -125,6 +125,9 @@ class Chosen extends AbstractChosen
       @search_field[0].disabled = false
       @selected_item.bind "focus.chosen", @activate_action if !@is_multiple
 
+    if(@disable_search)
+      $(@search_field[0]).prop 'disabled', true
+
   container_mousedown: (evt) ->
     if !@is_disabled
       if evt and evt.type is "mousedown" and not @results_showing
