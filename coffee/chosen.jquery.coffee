@@ -193,9 +193,11 @@ class Chosen extends AbstractChosen
       this.single_set_selected_text()
       if @disable_search or @form_field.options.length <= @disable_search_threshold
         @search_field[0].readOnly = true
+        @search_field[0].disabled = true
         @container.addClass "chosen-container-single-nosearch"
       else
         @search_field[0].readOnly = false
+        @search_field[0].disabled = false
         @container.removeClass "chosen-container-single-nosearch"
 
     this.update_results_content this.results_option_build({first:true})
